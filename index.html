@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="BooksBrain · Catálogo de la librería: busca libros por título, categoría, autor y disponibilidad." />
+    <meta name="theme-color" content="#00897b" />
+    <title>BooksBrain · Catálogo</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/pages/catalog.css" />
+    <script type="module" src="assets/js/pages/catalog.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#results">Saltar a los resultados</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand-logo" href="index.html" aria-label="BooksBrain, inicio">
+          <span class="brand-logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+          </span>
+          BooksBrain
+        </a>
+        <nav class="site-nav" aria-label="Principal">
+          <a class="site-nav__link" href="index.html" aria-current="page">Catálogo</a>
+          <div id="user-area"></div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <span class="hero__eyebrow">Librería presencial · Catálogo en línea</span>
+          <h1 class="hero__title">Encuentra tu próxima gran lectura</h1>
+          <p class="hero__lead">Explora nuestro catálogo, consulta la disponibilidad en tienda y visítanos para comprar o llevar tu libro en préstamo.</p>
+          <div class="hero__stats" id="hero-stats" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <div class="container">
+        <form class="filters" id="filters-form" role="search" aria-label="Filtrar catálogo">
+          <div class="filters__grid">
+            <label class="field filters__search">
+              <span class="sr-only">Buscar libros</span>
+              <span class="input-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input class="input" id="search" type="search" maxlength="150" placeholder="Buscar por título…" autocomplete="off" />
+              </span>
+            </label>
+            <label class="field">
+              <span class="sr-only">Categoría</span>
+              <select class="select" id="filter-category"><option value="">Todas las categorías</option></select>
+            </label>
+            <label class="field">
+              <span class="sr-only">Autor</span>
+              <select class="select" id="filter-author"><option value="">Todos los autores</option></select>
+            </label>
+            <label class="field">
+              <span class="sr-only">Ordenar por</span>
+              <select class="select" id="filter-sort">
+                <option value="title-asc">Título (A–Z)</option>
+                <option value="title-desc">Título (Z–A)</option>
+                <option value="salePrice-asc">Precio: menor a mayor</option>
+                <option value="salePrice-desc">Precio: mayor a menor</option>
+              </select>
+            </label>
+          </div>
+          <div class="filters__extra">
+            <label class="check"><input type="checkbox" id="filter-available" /> Solo disponibles en tienda</label>
+            <div class="row">
+              <div class="chips" id="active-chips"></div>
+              <button class="btn btn--ghost btn--sm" type="button" id="clear-filters" hidden>Limpiar filtros</button>
+            </div>
+          </div>
+        </form>
+
+        <section id="results" aria-labelledby="results-title">
+          <div class="results-head">
+            <h2 id="results-title">Catálogo</h2>
+            <span class="text-muted text-sm" id="result-count" aria-live="polite"></span>
+          </div>
+          <div class="book-grid" id="book-grid"></div>
+          <div id="catalog-pagination" style="margin-top: 2rem"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <span class="brand-logo">BooksBrain</span>
+        <span>Librería presencial · Préstamos y ventas en mostrador</span>
+      </div>
+    </footer>
+  </body>
+</html>
