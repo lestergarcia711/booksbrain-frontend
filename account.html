@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#00897b" />
+    <meta name="robots" content="noindex" />
+    <title>BooksBrain · Mi cuenta</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/pages/catalog.css" />
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css" />
+    <script type="module" src="assets/js/pages/account.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand-logo" href="index.html" aria-label="BooksBrain, catálogo">
+          <span class="brand-logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+          </span>
+          BooksBrain
+        </a>
+        <nav class="site-nav" aria-label="Principal">
+          <a class="site-nav__link" href="index.html">Catálogo</a>
+          <a class="site-nav__link" href="account.html" aria-current="page">Mi cuenta</a>
+          <div id="user-area"></div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" id="account-root" style="padding-top: 1.5rem">
+      <div class="loader-block" role="status"><span class="spinner"></span><span>Verificando sesión…</span></div>
+    </main>
+  </body>
+</html>
